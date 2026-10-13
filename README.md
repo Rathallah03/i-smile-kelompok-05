@@ -1,111 +1,60 @@
-# Phishing URL Classification Using Machine Learning
 
-**Study Group I-Smile — EDA to Machine Learning | Group 5**
+Klasifikasi URL Phishing Menggunakan Machine Learning
 
-A machine learning project focused on analyzing URL-related features and classifying URLs as phishing or legitimate websites.
+Study Group I-Smile — EDA to Machine Learning | Kelompok 5
+Sebuah proyek machine learning yang berfokus pada analisis fitur terkait URL dan mengklasifikasikan URL sebagai situs web phishing atau sah (legitimate).
 
-## 📌 About the Project
+👥 Anggota Tim
 
-Phishing is a type of cyberattack that attempts to deceive users into visiting fraudulent websites or disclosing sensitive information. Analyzing URL characteristics can help identify patterns associated with potentially malicious websites.
+Study Group I-Smile — Kelompok 5
 
-This project explores a phishing URL dataset through Exploratory Data Analysis (EDA), data cleaning, preprocessing, and machine learning classification.
+Anggota	Tanggung Jawab
+Raihan Athallah	Koordinasi proyek dan integrasi notebook
+Ridho Darmawan	Pemeriksaan kualitas data dan preprocessing
+Mohammad Harsa Avava	Pengembangan dan evaluasi model
 
-The primary objective is to build and evaluate a classification model that distinguishes phishing URLs from legitimate URLs using the available dataset features.
+Tanggung jawab ini bersifat sementara dan harus diperbarui untuk mencerminkan pembagian tugas yang disepakati serta kontribusi aktual tim.
 
-## 🎯 Project Objectives
+📌 Tentang Proyek
 
-- Explore the dataset and identify patterns related to phishing and legitimate URLs.
-- Inspect data quality and prepare features for machine learning.
-- Build a classification model using **K-Nearest Neighbors (KNN)**.
-- Evaluate model performance using appropriate classification metrics.
-- Interpret the results and discuss the model's limitations.
+Phishing adalah jenis serangan siber yang mencoba menipu pengguna agar mengunjungi situs web palsu atau membocorkan informasi sensitif. Menganalisis karakteristik URL dapat membantu mengidentifikasi pola yang terkait dengan situs web yang berpotensi berbahaya.
+Proyek ini mengeksplorasi dataset URL phishing melalui Exploratory Data Analysis (EDA), pembersihan data, preprocessing, dan klasifikasi machine learning.
+Tujuan utamanya adalah membangun dan mengevaluasi model klasifikasi yang dapat membedakan URL phishing dari URL yang sah menggunakan fitur dataset yang tersedia.
 
-## 📊 Dataset
+🎯 Tujuan Proyek
 
-This project uses the **PhiUSIIL Phishing URL Website Dataset** from the UCI Machine Learning Repository.
+• Mengeksplorasi dataset dan mengidentifikasi pola yang terkait dengan URL phishing dan URL sah.
+• Memeriksa kualitas data dan mempersiapkan fitur untuk machine learning.
+• Membangun model klasifikasi menggunakan K-Nearest Neighbors (KNN).
+• Mengevaluasi performa model menggunakan metrik klasifikasi yang sesuai.
+• Menginterpretasikan hasil dan mendiskusikan keterbatasan model.
 
-- **Source:** [UCI Machine Learning Repository — PhiUSIIL Phishing URL Website Dataset](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+website+dataset)
-- **Dataset size:** 235,795 instances
-- **Number of columns:** 56, including the target and identifier-related columns
-- **Problem type:** Binary classification
-- **Target variable:** `label`
-  - `0` — Phishing
-  - `1` — Legitimate
+📊 Dataset
 
-The dataset contains URL-related and webpage-related features that can be investigated during EDA and feature preparation.
+Proyek ini menggunakan PhiUSIIL Phishing URL Website Dataset dari UCI Machine Learning Repository.
+• Sumber: UCI Machine Learning Repository — PhiUSIIL Phishing URL Website Dataset
+• Ukuran Dataset: 235.795 instans
+• Jumlah Kolom: 56, termasuk target dan kolom terkait pengidentifikasi (identifier)
+• Jenis Masalah: Klasifikasi biner
+• Variabel Target: label
+	• 0 — Phishing
+	• 1 — Sah (Legitimate)
+Dataset ini berisi fitur-fitur terkait URL dan halaman web yang dapat diselidiki selama EDA dan persiapan fitur.
+Kolom FILENAME merupakan bidang terkait pengidentifikasi dan akan ditinjau sebelum pemodelan. Keputusan pemilihan fitur dan preprocessing akan didokumentasikan di dalam notebook.
 
-The `FILENAME` column is an identifier-related field and will be reviewed before modeling. Feature selection and preprocessing decisions will be documented in the notebook.
+🧪 Metodologi
 
-## 🧪 Methodology
+Proyek ini mengikuti tahapan-tahapan berikut:
+1. Exploratory Data Analysis (EDA) — Memeriksa struktur dataset, statistik deskriptif, distribusi target, dan pola fitur yang relevan.
+2. Pembersihan Data (Data Cleaning) — Memeriksa nilai yang hilang (missing values), catatan duplikat, tipe data, dan masalah kualitas data potensial lainnya.
+3. Preprocessing — Mempersiapkan fitur yang cocok untuk pemodelan, termasuk menyandikan (encoding) atau memilih fitur jika diperlukan, serta menskalakan fitur numerik untuk KNN.
+4. Pemisahan Data (Data Splitting) — Memisahkan data pelatihan dan pengujian untuk mengevaluasi generalisasi.
+5. Pengembangan Model — Melatih pengklasifikasi KNN sebagai model utama dan mengevaluasi model tambahan jika disertakan dalam eksperimen.
+6. Evaluasi Model — Menilai performa menggunakan akurasi, presisi, recall, matriks kebingungan (confusion matrix), dan validasi silang (cross-validation) jika memungkinkan.
+7. Kesimpulan — Merangkum temuan, performa model, dan keterbatasan.
+Semua keputusan pemilihan fitur dan preprocessing akan didokumentasikan untuk mengurangi risiko kebocoran data (data leakage).
 
-The project follows these stages:
+🤖 Machine Learning
 
-1. **Exploratory Data Analysis (EDA)** — Examine dataset structure, descriptive statistics, target distribution, and relevant feature patterns.
-2. **Data Cleaning** — Inspect missing values, duplicate records, data types, and other potential data-quality issues.
-3. **Preprocessing** — Prepare suitable features for modeling, including encoding or selecting features where necessary and scaling numerical features for KNN.
-4. **Data Splitting** — Separate training and testing data to evaluate generalization.
-5. **Model Development** — Train a KNN classifier as the primary model and evaluate additional models if included in the experiment.
-6. **Model Evaluation** — Assess performance using accuracy, precision, recall, a confusion matrix, and cross-validation where applicable.
-7. **Conclusion** — Summarize the findings, model performance, and limitations.
-
-All feature-selection and preprocessing decisions will be documented to reduce the risk of data leakage.
-
-## 🤖 Machine Learning
-
-The primary model is **K-Nearest Neighbors (KNN)**.
-
-Feature scaling is important for KNN because the algorithm relies on distances between data points. Model selection and parameter tuning will be performed using the training data, with final evaluation on the held-out test set.
-
-Additional models may be included for comparison if implemented and evaluated in the notebook.
-
-## 📈 Results
-
-*Results will be added after the experiments have been completed.*
-
-This section will summarize the final model, evaluation metrics, key findings, and limitations based on the actual experimental results.
-
-## 📁 Repository Structure
-
-```text
-i-smile-kelompok-05/
-├── README.md
-├── .gitignore
-├── notebooks/
-│   └── phishing_url_classification.ipynb
-├── slides/
-│   └── presentasi_project.pdf
-└── docs/
-    └── pembagian_tugas.md
-```
-
-*The structure above represents the planned organization. Files will appear as the project progresses.*
-
-## ▶️ How to Run
-
-1. Open the project notebook in Google Colab.
-2. Access the dataset from its official source or the dataset-loading method documented in the notebook.
-3. Run the notebook cells in order, or select **Runtime → Run all**.
-4. Review the EDA visualizations, preprocessing steps, model evaluation, and conclusions.
-
-Required Python libraries will be documented in the notebook once the implementation is finalized.
-
-## 👥 Team Members
-
-**Study Group I-Smile — Group 5**
-
-| Member | Responsibility |
-|---|---|
-| Raihan Athallah | Project coordination and notebook integration |
-| Ridho Darmawan | Data quality inspection and preprocessing |
-| Mohammad Harsa Avava | Model development and evaluation |
-
-*Responsibilities are provisional and should be updated to reflect the team's agreed task distribution and actual contributions.*
-
-## 📚 References
-
-- [PhiUSIIL Phishing URL Website Dataset — UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+website+dataset)
-- Study Group I-Smile — EDA to Machine Learning learning materials.
-
----
-
-*This repository documents the Group 5 mini-project for Study Group I-Smile: EDA to Machine Learning.*
+Model utamanya adalah K-Nearest Neighbors (KNN).
+Skalasi fitur (feature scaling) sangat penting untuk KNN karena algoritma ini mengandalkan jarak antar titik data. Pemilihan model dan penyetelan parameter (parameter tuning) akan dilakukan menggunakan data pelatihan, dengan evaluasi akhir pada kumpulan data pengujian yang ditahan (held-out test set).
