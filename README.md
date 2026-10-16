@@ -1,88 +1,117 @@
 # Klasifikasi URL Phishing Menggunakan Machine Learning
 
-**Study Group I-Smile — EDA to Machine Learning | Kelompok 5**
+**Study Group I-Smile — EDA to Machine Learning**
 
-## 👥 Tim Proyek
+Proyek ini merupakan bagian dari kegiatan Study Group I-Smile yang berfokus pada *Exploratory Data Analysis* (EDA), *data cleaning*, dan penerapan machine learning untuk klasifikasi URL phishing.
 
-### Anggota Kelompok
+## 👥 Kelompok 05
 
 | Nama | Tanggung Jawab |
 |---|---|
-| Raihan Athallah | Koordinasi proyek dan integrasi notebook |
-| Ridho Darmawan | |
-| Mohammad Harsa Avava | |
+| Raihan Athallah | Koordinasi proyek, persiapan repository dan notebook, integrasi notebook, EDA, pemodelan KNN, cross-validation, tuning hyperparameter, evaluasi dan pemeriksaan hasil akhir. |
+| Ridho Darmawan | Data cleaning, pemeriksaan kualitas data, audit dan seleksi fitur, serta kolaborasi dalam penyusunan slide presentasi. |
+| Mohammad Harsa Avava | Dukungan koordinasi dan bantuan *backup*. |
 
-### Asisten Pendamping
-
-| Peran | Profil GitHub |
-|---|---|
-| Asisten Pendamping Kelompok 5 | [@fxrdhan](https://github.com/fxrdhan) |
+**Asisten Pendamping:** [@fxrdhan](https://github.com/fxrdhan)
 
 ## 🔗 Tautan Proyek
 
-- **Notebook Google Colab:** [Buka Notebook Proyek](https://colab.research.google.com/drive/1F8ayecWDf7akkDR-imaB0wjH6ZyfaB21)
 - **Repository GitHub:** [i-smile-kelompok-05](https://github.com/Rathallah03/i-smile-kelompok-05)
-- **Dataset:** [PhiUSIIL Phishing URL Website Dataset — UCI](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+website+dataset)
+- **Notebook Google Colab:** [Klasifikasi URL Phishing](https://colab.research.google.com/drive/1F8ayecWDf7akkDR-imaB0wjH6ZyfaB21)
+- **Dataset resmi:** [PhiUSIIL Phishing URL Website Dataset — UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+website+dataset)
 
-## 📌 Tentang Proyek
+## 📌 Latar Belakang
 
-Phishing merupakan salah satu bentuk serangan cyber yang berupaya menipu pengguna agar mengunjungi situs web palsu atau memberikan informasi sensitif. Karakteristik URL dan halaman web dapat dianalisis untuk mempelajari pola yang berkaitan dengan situs phishing.
+Phishing merupakan bentuk serangan cyber yang memanfaatkan tautan atau situs web palsu untuk menipu pengguna dan berpotensi mencuri informasi sensitif. Karakteristik URL dan fitur terkait situs web dapat dianalisis untuk menemukan pola yang membedakan URL phishing dari URL legitimate.
 
-Proyek ini berfokus pada analisis karakteristik URL melalui **Exploratory Data Analysis (EDA)** serta penerapan machine learning untuk mengklasifikasikan URL ke dalam dua kategori, yaitu phishing dan situs yang sah (*legitimate*).
-
-Proyek ini merupakan bagian dari kegiatan Study Group I-Smile dengan topik EDA to Machine Learning.
+Proyek ini menerapkan pendekatan klasifikasi biner untuk mempelajari karakteristik tersebut menggunakan dataset publik dan algoritma machine learning.
 
 ## 🎯 Tujuan Proyek
 
-- Mengeksplorasi dataset dan mengidentifikasi pola yang berkaitan dengan URL phishing dan legitimate.
-- Memeriksa kualitas data serta mempersiapkan fitur untuk pemodelan.
+- Melakukan EDA untuk memahami struktur, distribusi, dan pola dalam dataset.
+- Memeriksa kualitas data dan melakukan seleksi fitur untuk pemodelan.
 - Membangun model klasifikasi menggunakan **K-Nearest Neighbors (KNN)**.
-- Mengevaluasi performa model menggunakan metrik klasifikasi yang sesuai.
-- Menginterpretasikan hasil eksperimen dan membahas keterbatasan model.
+- Mengevaluasi model menggunakan metrik klasifikasi dan *cross-validation*.
+- Menginterpretasikan hasil serta menjelaskan keterbatasan eksperimen.
 
 ## 📊 Dataset
 
 Proyek ini menggunakan **PhiUSIIL Phishing URL Website Dataset** dari UCI Machine Learning Repository.
 
-- **Sumber:** [UCI Machine Learning Repository — PhiUSIIL Phishing URL Website Dataset](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+website+dataset)
-- **Jumlah data:** 235.795 baris
-- **Jumlah kolom:** 56, termasuk kolom target dan kolom terkait identifikasi
-- **Jenis masalah:** Klasifikasi biner (*binary classification*)
-- **Variabel target:** `label`
+| Informasi | Keterangan |
+|---|---|
+| Sumber | UCI Machine Learning Repository |
+| Jumlah baris awal | 235.795 |
+| Jumlah kolom awal | 56 |
+| Jenis masalah | Klasifikasi biner |
+| Kolom target | `label` |
+| Label 0 | Phishing |
+| Label 1 | Legitimate |
 
-Keterangan label:
-
-- `0` — Phishing
-- `1` — Legitimate (situs yang sah)
-
-Dataset ini berisi berbagai fitur terkait struktur URL dan karakteristik halaman web. Fitur-fitur tersebut akan dieksplorasi untuk mengetahui pola yang dapat membantu proses klasifikasi.
-
-Kolom `FILENAME` akan ditinjau sebelum pemodelan karena berkaitan dengan identifikasi data. Pemilihan fitur dan keputusan preprocessing akan dijelaskan lebih lanjut dalam notebook.
+Dataset mencakup fitur numerik dan informasi terkait URL serta karakteristik situs web. Sebelum pemodelan, fitur ditinjau dan dipilih berdasarkan kebutuhan analisis.
 
 ## 🧪 Metodologi
 
-Proyek ini direncanakan melalui beberapa tahapan berikut:
+Proyek dilakukan melalui tahapan berikut:
 
-1. **Exploratory Data Analysis (EDA)** — Memeriksa struktur dataset, statistik deskriptif, distribusi target, dan pola pada fitur yang relevan.
-2. **Data Cleaning** — Memeriksa nilai yang hilang, data duplikat, tipe data, dan potensi masalah kualitas data lainnya.
-3. **Preprocessing** — Mempersiapkan fitur untuk pemodelan, termasuk pemilihan fitur, encoding jika diperlukan, dan scaling untuk KNN.
-4. **Pembagian Data** — Memisahkan data menjadi data latih (*training set*) dan data uji (*testing set*).
-5. **Pengembangan Model** — Membangun model KNN sebagai model utama dan model pembanding apabila digunakan dalam eksperimen.
-6. **Evaluasi Model** — Mengukur performa menggunakan accuracy, precision, recall, confusion matrix, serta cross-validation sesuai kebutuhan.
-7. **Kesimpulan** — Merangkum hasil analisis, performa model, dan keterbatasan penelitian.
+1. **Exploratory Data Analysis (EDA):** pemeriksaan struktur data, statistik deskriptif, distribusi target, dan visualisasi fitur.
+2. **Data Cleaning:** pemeriksaan missing values, URL berulang, duplikasi, dan kandidat outlier.
+3. **Seleksi Fitur:** peninjauan kolom identifikasi, kolom nonnumerik, serta fitur yang tidak digunakan dalam model akhir.
+4. **Preprocessing:** penyiapan fitur dan penerapan `StandardScaler`.
+5. **Pembagian Data:** pemisahan data menjadi training set dan test set dengan rasio 80:20 serta `random_state=42` dan `stratify=y`.
+6. **Pemodelan:** penggunaan KNN dengan scaling dalam `Pipeline`.
+7. **Evaluasi dan Tuning:** penggunaan Stratified 5-Fold Cross-Validation pada data training serta pengujian kandidat nilai `k`.
+8. **Evaluasi Akhir:** pengukuran performa model terpilih pada test set.
+9. **Kesimpulan:** interpretasi hasil dan pembahasan keterbatasan model.
 
-Setiap keputusan terkait pemilihan fitur dan preprocessing akan didokumentasikan untuk membantu mengurangi risiko *data leakage*.
+## 🤖 Model dan Hasil Evaluasi
 
-## 🤖 Model Machine Learning
+Model akhir yang dipilih adalah **K-Nearest Neighbors (KNN) dengan `k = 3`**, berdasarkan hasil perbandingan kandidat hyperparameter pada subset training.
 
-Model utama yang digunakan dalam proyek ini adalah **K-Nearest Neighbors (KNN)**.
+| Metrik | Hasil |
+|---|---:|
+| Jumlah fitur pada model final | 48 |
+| Mean CV accuracy untuk `k = 3` | 99,025% |
+| Test accuracy | 99,26% |
+| Precision kelas phishing | 99,23% |
+| Recall kelas phishing | 99,05% |
 
-KNN mengklasifikasikan data berdasarkan kedekatannya dengan sejumlah tetangga terdekat. Oleh karena itu, scaling fitur menjadi salah satu tahap penting agar perbedaan skala antarfitur tidak mendominasi perhitungan jarak.
+Berdasarkan confusion matrix pada test set:
 
-Pemilihan model dan penyesuaian parameter akan dilakukan menggunakan data latih, sedangkan data uji akan digunakan untuk evaluasi akhir.
+- **19.912** URL phishing diklasifikasikan dengan benar.
+- **192** URL phishing salah diklasifikasikan sebagai legitimate.
+- **154** URL legitimate salah diklasifikasikan sebagai phishing.
+- **26.816** URL legitimate diklasifikasikan dengan benar.
 
-Model tambahan dapat digunakan sebagai pembanding apabila benar-benar diterapkan dan dievaluasi dalam notebook.
+Recall kelas phishing penting diperhatikan karena phishing yang salah diklasifikasikan sebagai legitimate dapat lolos dari proses deteksi.
 
-## 📈 Hasil dan Evaluasi
+## ⚠️ Keterbatasan
 
--------
+Hasil evaluasi menunjukkan performa tinggi pada test set yang digunakan, tetapi tidak menjamin model akan memiliki performa serupa pada seluruh URL baru di dunia nyata.
+
+Beberapa keterbatasan eksperimen:
+
+- Tuning hyperparameter hanya membandingkan kandidat `k = 3`, `k = 5`, dan `k = 7` pada subset training.
+- Validasi eksternal menggunakan dataset yang sepenuhnya independen belum dilakukan.
+- Hasil evaluasi bergantung pada dataset, fitur yang dipilih, dan skema pembagian data.
+- Potensi kebocoran informasi atau kemiripan antarobservasi perlu tetap dipertimbangkan ketika menafsirkan hasil.
+
+## 📁 Struktur Repository
+
+```text
+i-smile-kelompok-05/
+├── README.md
+├── .gitignore
+└── dataset/
+    └── phishing_url_dataset.csv
+```
+
+## 📚 Referensi
+
+- UCI Machine Learning Repository. [PhiUSIIL Phishing URL Website Dataset](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+website+dataset).
+- Dokumentasi scikit-learn. [K-Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
+- Dokumentasi scikit-learn. [Model Selection and Cross-Validation](https://scikit-learn.org/stable/modules/cross_validation.html).
+
+---
+
+*Proyek Study Group I-Smile — EDA to Machine Learning, Kelompok 05.*
